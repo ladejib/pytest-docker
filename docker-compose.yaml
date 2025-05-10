@@ -6,5 +6,5 @@ services:
     volumes:
       - ./tests:/app/tests
       - ./reports:/app/reports
-    entrypoint: ["pytest", "-n", "auto", "--dist", "loadscope"]
+    entrypoint: ["pytest", "-n", "auto", "--dist", "loadscope", "--html=/app/reports/report.html"]
 
