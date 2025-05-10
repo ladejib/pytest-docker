@@ -11,3 +11,9 @@ jobs:
       - name: Build and run tests
         run: docker compose up --build --abort-on-container-exit
 
+      - name: Upload HTML Report
+        if: always()  # Always run even if tests fail
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-html-reports
+          path: reports/
