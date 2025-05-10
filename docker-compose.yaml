@@ -1,0 +1,10 @@
+services:
+  pytest:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./tests:/app/tests
+      - ./reports:/app/reports
+    entrypoint: ["pytest", "-n", "auto", "--dist", "loadscope"]
+
